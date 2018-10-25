@@ -1,3 +1,7 @@
+notifications:
+  email:
+    - robvanderleek@gmail.com
+
 sudo: required
 
 services:
@@ -10,4 +14,4 @@ script:
 
 after_success:
   - sh .travis/deploy_dockerhub.sh
-  - sh .travis/deploy_heroku.sh
+  - test "$TRAVIS_BRANCH" = "master" && sh .travis/deploy_heroku.sh
