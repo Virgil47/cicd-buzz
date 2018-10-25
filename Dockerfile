@@ -7,5 +7,4 @@ COPY app.py /src
 COPY buzz /src/buzz
 COPY static /src/static
 COPY templates /src/templates
-# CMD python /src/app.py
-CMD gunicorn app:app --bind 0.0.0.0:$PORT --reload
+CMD python /src/app.py
