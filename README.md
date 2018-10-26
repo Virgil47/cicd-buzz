@@ -3,3 +3,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/Terlins/cicd-buzz?branch=master)](https://bettercodehub.com/)
 
 Find the deployed application [here](https://cicdbuzztestterlins.herokuapp.com/)
+
+Оригинальная статья https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b
+
+Внес некотрые изменения в код, т.к. не полностью работает приложение следуя инструкции из статьи.
