@@ -21,22 +21,30 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh "sudo docker build -f Dockerfile -t virgil47/testrepo:latest ."
+                 script {
+                    sh "sudo docker build -f Dockerfile -t virgil47/testrepo:latest ."
+                }
             }
         }
         stage('push') {
             steps {
-                sh "sudo docker push virgil47/testrepo:latest"
+                script {
+                    sh "sudo docker push virgil47/testrepo:latest"
+                }
             }
         }
         stage('stop') {
             steps {
-                sh "sudo docker stop testrepo || true && sudo docker rm testrepo || true"
+                script {
+                    sh "sudo docker stop testrepo || true && sudo docker rm testrepo || true"
+                }
             }
         }
         stage('run') {
             steps {
-                sh "sudo docker run --name testrepo -p 8081:5000 --rm -d virgil47/testrepo:latest"
+                script {
+                    sh "sudo docker run --name testrepo -p 8081:5000 --rm -d virgil47/testrepo:latest"
+                }
             }
         }
     }
