@@ -5,20 +5,20 @@ pipeline {
         timeout(time: 1, unit: 'SECONDS')
     }
     stages {
-        stage('gitclone') {
-            steps {
-               script{
-                  checkout([
-                            $class: 'GitSCM', 
-                            branches: [[name: '*/master']], 
-                            doGenerateSubmoduleConfigurations: false, 
-                            extensions: [[$class: 'CleanCheckout']], 
-                            submoduleCfg: [], 
-                            userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/Virgil47/cicd-buzz.git']]
-                   ])
-                }
-            }
-        }
+      //  stage('gitclone') {
+         //   steps {
+           //   script{
+          //      checkout([
+            //                $class: 'GitSCM', 
+               //             branches: [[name: '*/master']], 
+                 //           doGenerateSubmoduleConfigurations: false, 
+                    //        extensions: [[$class: 'CleanCheckout']], 
+                      //      submoduleCfg: [], 
+                         //   userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/Virgil47/cicd-buzz.git']]
+                //   ])
+               // }
+           // }
+      //  }
         stage('build') {
             steps {
                  script {
